@@ -1,0 +1,1 @@
+<?php include theme_dir().'/404.php'; /// This will be displayed if there's no other pages ?>
