@@ -8,7 +8,7 @@
 	}
 
 	/// Get URL
-	$urlhandler = str_ireplace( str_ireplace($_SERVER['DOCUMENT_ROOT'], '', APP_PATH.'/'), '', stripslashes( trim( htmlspecialchars( $_SERVER['REQUEST_URI'] ) ) ) );
+	$urlhandler = rtrim( str_ireplace( str_ireplace($_SERVER['DOCUMENT_ROOT'], '', APP_PATH.'/'), '', stripslashes( trim( htmlspecialchars( $_SERVER['REQUEST_URI'] ) ) ) ), '/' );
 
 	/// Controller Permalink Halaman
 	if ( isset( $icms_pages[ $urlhandler ] ) ){
