@@ -1,7 +1,7 @@
 <?php
 
 	$updatestatus = json_decode(file_get_contents('https://raw.githubusercontent.com/GreenRunchly/icms/main/server/latest.json'), true);
-	$updatestatus[0][1] = '1.1';
+	$updatestatus[0][1] = '1.0';
 
 	if ( ! empty( $updatestatus[0][0] ) ){
 
@@ -15,12 +15,13 @@
 				
 				foreach ( $updatestatus[1] as $zipfilekey => $zipfilename) {
 					$datafile = $zip->getFromName( $zipfilename );
-					file_put_contents( $zipfilename , $datafile);
+					echo $datafile;
+					//file_put_contents( $zipfilename , $datafile);
 				}
 
 				$zip->close();
 
-				unlink('update.temp');
+				//unlink('update.temp');
 			}
 
 		}else{
