@@ -16,10 +16,10 @@
 				foreach ( $updatestatus[1] as $zipfilekey => $zipfilename) {
 					$datafile = $zip->getFromName( $zipfilename );
 					//echo $datafile;
-					if ( ! file_exists( str_ireplace( "icms-main", '', $zipfilename) ) ) {
-						mkdir( dirname(str_ireplace( "icms-main", '', $zipfilename)) );
+					if ( ! file_exists( ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' ) ) ) {
+						mkdir( dirname( ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' ) ) );
 					}
-					file_put_contents( str_ireplace( "icms-main", '', $zipfilename) , $datafile);
+					file_put_contents( ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' ) , $datafile);
 				}
 
 				$zip->close();
