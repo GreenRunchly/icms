@@ -22,6 +22,7 @@
 						if ( ! file_exists( ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' ) ))
 						mkdir( dirname( ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' ) ) , 0777, true);
 					}
+					if ( ! file_exists( ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' ) )
 					file_put_contents( ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' ) , $datafile);
 				}
 
