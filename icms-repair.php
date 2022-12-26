@@ -18,14 +18,14 @@
 				foreach ( $updatestatus[1] as $zipfilekey => $zipfilename) {
 					$datafile = $zip->getFromName( $zipfilename );
 
-					unlink( ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' ) );
+					$zipfilename = ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' );
 					
-					if ( ! is_dir( ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' ) ) ) {
-						if ( ! file_exists( ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' ) ))
-						mkdir( dirname( ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' ) ) , 0777, true);
+					if ( ! is_dir( dirname( $zipfilename ) ) ) {
+						if ( ! file_exists( $zipfilename ))
+						mkdir( dirname( $zipfilename ) , 0777, true);
 					}
-					if ( ! file_exists( ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' ) ) )
-					file_put_contents( ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' ) , $datafile);
+					if ( ! file_exists( $zipfilename ) )
+					file_put_contents( $zipfilename , $datafile);
 				}
 
 				$zip->close();
