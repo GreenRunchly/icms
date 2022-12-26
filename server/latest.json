@@ -3,15 +3,15 @@
 		"1.1"
 	],
 	[
-		"app-theme/main-app/404.php",
-		"app-theme/main-app/index.php",
-		"app-theme/index.php",
-		"app-theme/README.md",
-		".htaccess",
-		"icms-config.php",
-		"icms-function.php",
-		"icms-load.php",
-		"icms-themehandler.php",
-		"icms-repair.php"
+		"icms-main/app-theme/main-app/404.php",
+		"icms-main/app-theme/main-app/index.php",
+		"icms-main/app-theme/index.php",
+		"icms-main/app-theme/README.md",
+		"icms-main/.htaccess",
+		"icms-main/icms-config.php",
+		"icms-main/icms-function.php",
+		"icms-main/icms-load.php",
+		"icms-main/icms-themehandler.php",
+		"icms-main/icms-repair.php"
 	]
 ]
