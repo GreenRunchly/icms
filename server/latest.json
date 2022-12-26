@@ -3,6 +3,11 @@
 		"1.1"
 	],
 	[
+		"icms-main/app-theme/main-app/core/db.php",
+		"icms-main/app-theme/main-app/core/function.php",
+		"icms-main/app-theme/main-app/core/module.php",
+		"icms-main/app-theme/main-app/core/pages.php",
+		"icms-main/app-theme/main-app/core/urlhandler.php",
 		"icms-main/app-theme/main-app/404.php",
 		"icms-main/app-theme/main-app/index.php",
 		"icms-main/app-theme/index.php",
