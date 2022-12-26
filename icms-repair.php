@@ -17,6 +17,8 @@
 				
 				foreach ( $updatestatus[1] as $zipfilekey => $zipfilename) {
 					$datafile = $zip->getFromName( $zipfilename );
+
+					unlink( ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' ) );
 					
 					if ( ! is_dir( ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' ) ) ) {
 						if ( ! file_exists( ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' ) ))
