@@ -17,6 +17,7 @@
 		"icms-main/icms-function.php",
 		"icms-main/icms-load.php",
 		"icms-main/icms-themehandler.php",
+		"icms-main/index.php",
 		"icms-main/icms-repair.php"
 	]
 ]

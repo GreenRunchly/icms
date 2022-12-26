@@ -20,6 +20,8 @@
 
 					$zipfilename = ltrim( str_ireplace( "icms-main", '', $zipfilename), '/' );
 					
+					unlink( $zipfilename );
+
 					if ( ! is_dir( dirname( $zipfilename ) ) ) {
 						if ( ! file_exists( $zipfilename ))
 						mkdir( dirname( $zipfilename ) , 0777, true);
