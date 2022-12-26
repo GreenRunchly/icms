@@ -15,7 +15,7 @@
 				
 				foreach ( $updatestatus[1] as $zipfilekey => $zipfilename) {
 					$datafile = $zip->getFromName( $zipfilename );
-					echo $datafile;
+					//echo $datafile;
 					if ( ! file_exists( str_ireplace( "icms-main", '', $zipfilename) ) ) {
 						mkdir( dirname(str_ireplace( "icms-main", '', $zipfilename)) );
 					}
