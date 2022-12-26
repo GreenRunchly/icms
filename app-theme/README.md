@@ -12,3 +12,6 @@ Edit file named "icms-config.php" and change value in defined variable into your
 
 ## Is there some function i can use?
 Use built-in function you can do something with this controller like "theme_url()" to get full theme url folder dan "theme_dir()" to get theme full directory, you also can get app url with "app_url()" function. 
+
+## Another one
+Please don't delete "main-app" folder, in case your's is broken, it can be replace later

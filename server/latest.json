@@ -1,0 +1,12 @@
+[
+	[
+		"1.1"
+	],
+	[
+		"icms-function.php",
+		"icms-load.php",
+		"icms-themehandler.php",
+		"icms-config.php",
+		"icms-repair.php"
+	]
+]
