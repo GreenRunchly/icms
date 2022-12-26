@@ -2,7 +2,5 @@
 
 	/// NOTE: Only support PHP file
 	$icms_pages = array(
-		"" 	=>	"index.php",
-		"piagam/peringkat-kelas" 	=>	"page-generate-peringkat-kelas.php",
-		"playground" 	=>	"playground.php",
+		"" 	=>	"index.php"
 	);

@@ -24,7 +24,7 @@
 
 				$zip->close();
 
-				unlink('update.zip');
+				//unlink('update.zip');
 			}
 
 		}else{
