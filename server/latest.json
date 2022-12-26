@@ -3,10 +3,15 @@
 		"1.1"
 	],
 	[
+		"app-theme/main-app/404.php",
+		"app-theme/main-app/index.php",
+		"app-theme/index.php",
+		"app-theme/README.md",
+		".htaccess",
+		"icms-config.php",
 		"icms-function.php",
 		"icms-load.php",
 		"icms-themehandler.php",
-		"icms-config.php",
 		"icms-repair.php"
 	]
 ]
