@@ -4,7 +4,6 @@
 
 	/// App Config
 	require_once __DIR__ . '/' . APP_MOD_PREFIX . 'update.php';
-	die();
 
 	/// App Config
 	require_once __DIR__ . '/' . APP_MOD_PREFIX . 'config.php';

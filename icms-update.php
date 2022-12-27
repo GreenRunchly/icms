@@ -1,16 +1,15 @@
 <?php
 	
 	/// Last update to do auto update
-	echo $last_update = strtotime( "now" ) - filemtime( __DIR__ . '/' . APP_MOD_PREFIX . 'update.php' );
+	$last_update = strtotime( "now" ) - filemtime( __DIR__ . '/' . APP_MOD_PREFIX . 'update.php' );
 	if ( $last_update > ( (60 * 60) * 1 ) ){
 
-		echo "Updated";
 		$fileupdater = fopen( "icms-update.php", "r");
 		file_put_contents( "icms-update.php", fread($fileupdater,filesize("icms-update.php")) );
 		fclose( $fileupdater );
 
 		$updatestatus = json_decode(file_get_contents('https://raw.githubusercontent.com/GreenRunchly/icms/main/server/latest.json'), true);
-		$updatestatus[0][1] = '1.2';
+		$updatestatus[0][1] = '1.0';
 
 		if ( ! empty( $updatestatus[0][0] ) ){
 
