@@ -24,24 +24,10 @@
 	}
 	
 	/// Get URL
-	/*$urlhandlertemp['req'] = ltrim( rtrim( stripslashes( trim( htmlspecialchars( $_SERVER['REQUEST_URI'] ) ) ) , '/' ), '/' );
-	$urlhandlertemp['app'] = ltrim( rtrim( str_ireplace($_SERVER['DOCUMENT_ROOT'], '', APP_PATH) , '/' ), '/' );
+	$urlhandler = ltrim( str_ireplace(str_ireplace($_SERVER['DOCUMENT_ROOT'], '', APP_PATH ), '', 
+		ltrim( rtrim( parse_url( stripslashes( trim( htmlspecialchars( $_SERVER['REQUEST_URI'] ) ) ))['path'], '/' ), '/' )
+	), '/' );
 	
-	$urlhandler = ltrim( rtrim( 
-		str_ireplace(
-			substr_replace($urlhandlertemp['app'], $urlhandlertemp['uniq'],0,- ( strlen($urlhandlertemp['app']) ) ),
-			'',
-			substr_replace($urlhandlertemp['req'], $urlhandlertemp['uniq'],0,- ( strlen($urlhandlertemp['req']) ) ) )
-	, '/' ), '/' );*/
-
-	//echo parse_url(stripslashes( trim( htmlspecialchars( $_SERVER['REQUEST_URI'] ) ) ))['path']; echo "<br>";
-	//echo str_ireplace($_SERVER['DOCUMENT_ROOT'], '', APP_PATH);
-
-	//echo $urlhandler = stripslashes( trim( htmlspecialchars( $_SERVER['REQUEST_URI'] ) ) );
-
-	$urlhandlertemp = md5( floor( microtime(true) * 1000 ) );
-	$urlhandler = ltrim( rtrim( str_ireplace( substr_replace( str_ireplace($_SERVER['DOCUMENT_ROOT'], '', APP_PATH ), $urlhandlertemp, 0, - strlen($urlhandlertemp) ), '', substr_replace( parse_url( stripslashes( trim( htmlspecialchars( $_SERVER['REQUEST_URI'] ) ) ))['path'], $urlhandlertemp, 0, - strlen($urlhandlertemp) ) ) , '/' ), '/' );
-
 	/// Controller Permalink Halaman
 	if ( isset( $icms_pages[ $urlhandler ] ) ){
 		if (file_exists( app_theme_dir() . '/' . $icms_pages[ $urlhandler ] )){
