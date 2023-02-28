@@ -29,7 +29,8 @@
 	), '/' );
 
 	/// Remah Remah URL
-	$urlhandlerbreak = explode('/', $urlhandler); $urlhandlerbreakfix = ''; $urlhandlertrail = '';
+	$urlhandlerbreak = explode('/', $urlhandler); $urlhandlerbreakfix = ''; $urlhandlertrail = ''; 
+	$urlhandler_trim = $urlhandler;
 	foreach ($urlhandlerbreak as $key => $value) {
 		
 		$urlhandlerbreakfix = $urlhandlerbreakfix . $value . '/';
@@ -44,6 +45,7 @@
 	}
 
 	$urlhandler = $urlhandler_trim;
+
 	/// Use $urlhandler for the page url
 	/// Use $urlhandlertrail for trail next the page path such as http://wa.me/phone/ea, if you have page phone, then will return "ea"
 	
