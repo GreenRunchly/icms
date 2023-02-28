@@ -27,6 +27,25 @@
 	$urlhandler = ltrim( str_ireplace(str_ireplace($_SERVER['DOCUMENT_ROOT'], '', APP_PATH ), '', 
 		ltrim( rtrim( parse_url( stripslashes( trim( htmlspecialchars( $_SERVER['REQUEST_URI'] ) ) ))['path'], '/' ), '/' )
 	), '/' );
+
+	/// Remah Remah URL
+	$urlhandlerbreak = explode('/', $urlhandler); $urlhandlerbreakfix = ''; $urlhandlertrail = '';
+	foreach ($urlhandlerbreak as $key => $value) {
+		
+		$urlhandlerbreakfix = $urlhandlerbreakfix . $value . '/';
+		$urlhandlerbreakfix_trim = rtrim( ltrim($urlhandlerbreakfix, '/'), '/' );
+
+		foreach ($icms_pages as $key => $value) {
+			if ($key == $urlhandlerbreakfix_trim) {
+				$urlhandlertrail = ltrim( str_ireplace($urlhandlerbreakfix_trim, '', $urlhandler), '/');
+				$urlhandler_trim = $urlhandlerbreakfix_trim;
+			}
+		}	
+	}
+
+	$urlhandler = $urlhandler_trim;
+	/// Use $urlhandler for the page url
+	/// Use $urlhandlertrail for trail next the page path such as http://wa.me/phone/ea, if you have page phone, then will return "ea"
 	
 	/// Controller Permalink Halaman
 	if ( isset( $icms_pages[ $urlhandler ] ) ){
