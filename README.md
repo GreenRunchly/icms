@@ -79,7 +79,7 @@ Contoh pemakaiannya
 
 ```
 print_r( 
-    app_db_select( "ieulink_pengguna", [ "id" ], [ 1 ] )[ 'result' ][0] 
+    app_db_select( "ieulink_pengguna", [ "id" ], [ 1 ] )
 );
 ```
 
