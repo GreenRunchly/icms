@@ -9,7 +9,7 @@
 		fclose( $fileupdater );
 
 		$updatestatus = json_decode(file_get_contents('https://raw.githubusercontent.com/GreenRunchly/icms/main/server/latest.json'), true);
-		$updatestatus[0][1] = '1.3';
+		$updatestatus[0][1] = '1.4';
 
 		if ( ! empty( $updatestatus[0][0] ) ){
 
