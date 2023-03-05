@@ -15,7 +15,7 @@
 	if ( file_exists( app_theme_dir() . '/core/db.php' ) ) {
 		include app_theme_dir() . '/core/db.php';
 		/// Connect to Main db used in ICMS
-		if ( defined( 'ICMS_DB_NAME' ) ){
+		if ( ( defined( 'ICMS_DB_NAME' ) ) && ( !empty( ICMS_DB_NAME ) ) ){
 			$icms_db_conn = app_db_connect(); /// Use this connection if you want to query something
 		}
 	}else{
