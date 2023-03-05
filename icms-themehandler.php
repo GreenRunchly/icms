@@ -33,25 +33,40 @@
 	/// Use $urlhandlertrail for trail next the page path such as http://wa.me/phone/ea, if you have page phone, then will return "ea"
 	$urlhandlerbreak = explode('/', $urlhandler); 
 	$urlhandlertemp = ''; $urlhandlerfix = '';
-	$urlhandlertrail = '';
-
-	for ($i=1; $i < sizeof($urlhandlerbreak); $i++) { 
-		if ($i != sizeof($urlhandlerbreak) ){
+	$urlhandlertrail = ''; $urlat = 0;
+	// Set page url
+	for ($i=0; $i < sizeof($urlhandlerbreak); $i++) { 
+		if (($i != sizeof($urlhandlerbreak) ) && ($i != 0) ){
 			$urlhandlertemp = $urlhandlertemp . '/';
 		}
 		$urlhandlertemp = $urlhandlertemp . $urlhandlerbreak[$i];
 
 		foreach ($icms_pages as $slug_page => $file) {
-			$urlhandlerfix = str_ireplace($urlhandlertemp, '', $slug_page);
+			if ($urlhandlertemp == $slug_page){
+				$urlhandlerfix = $slug_page; $urlat = $i;
+			}
 		}
 	}
-	$urlhandlertrail = ltrim( str_ireplace($urlhandlerfix, '', $urlhandler), '/');
-	$urlhandler = $urlhandlerfix;
+	// Set url trail
+	for ($i=$urlat+1; $i < sizeof($urlhandlerbreak); $i++) { 
+		if (($i != sizeof($urlhandlerbreak) ) && ($i != $urlat+1) ){
+			$urlhandlertrail = $urlhandlertrail . '/';
+		}
+		$urlhandlertrail = $urlhandlertrail . $urlhandlerbreak[$i];
+	}
+
+	// $outp = [];
+	// $outp['handler'] = $urlhandler;
+	// $outp['at'] = $urlat;
+	// $outp['fix'] = $urlhandlerfix;
+	// $outp['temp'] = $urlhandlertemp;
+	// $outp['trail'] = $urlhandlertrail;
+	// echo json_encode($outp);
 
 	/// Controller Permalink Halaman
-	if ( isset( $icms_pages[ $urlhandler ] ) ){
-		if (file_exists( app_theme_dir() . '/' . $icms_pages[ $urlhandler ] )){
-			include app_theme_dir() . '/' . $icms_pages[ $urlhandler ]; /// Constant Page
+	if ( isset( $icms_pages[ $urlhandlerfix ] ) ){
+		if (file_exists( app_theme_dir() . '/' . $icms_pages[ $urlhandlerfix ] )){
+			include app_theme_dir() . '/' . $icms_pages[ $urlhandlerfix ]; /// Constant Page
 		}else{
 			if (file_exists( app_theme_dir() . '/404.php')){ /// Not Found
 				include app_theme_dir() . '/404.php'; 
