@@ -22,7 +22,7 @@ Ingat! updater akan menimpah file berikut
 - icms-themehandler.php
 - icms-update.php
 - index.php
-- .htaccess
+- .htaccess.bak
 
 jadi harap tidak melakukan perubahan pada file tersebut.
 

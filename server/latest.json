@@ -16,6 +16,7 @@
 	    "icms-main/icms-load.php",
 	    "icms-main/icms-themehandler.php",
 	    "icms-main/index.php",
-	    "icms-main/icms-update.php"
+	    "icms-main/icms-update.php",
+	    "icms-main/.htaccess.bak"
 	]
 ]
