@@ -32,7 +32,7 @@
 	/// Use $urlhandler for the page url
 	/// Use $urlhandlertrail for trail next the page path such as http://wa.me/phone/ea, if you have page phone, then will return "ea"
 	$urlhandlerbreak = explode('/', $urlhandler); 
-	$urlhandlertemp = ''; $urlhandlerfix = '';
+	$urlhandlertemp = ''; $urlhandlerfix = '404';
 	$urlhandlertrail = ''; $urlat = 0;
 	// Set page url
 	for ($i=0; $i < sizeof($urlhandlerbreak); $i++) { 
@@ -54,6 +54,9 @@
 		}
 		$urlhandlertrail = $urlhandlertrail . $urlhandlerbreak[$i];
 	}
+
+	/// Debugger Script for Slug
+	/// JG91dHAgPSBbXTsKCSRvdXRwWydoYW5kbGVyJ10gPSAkdXJsaGFuZGxlcjsKCSRvdXRwWydhdCddID0gJHVybGF0OwoJJG91dHBbJ2ZpeCddID0gJHVybGhhbmRsZXJmaXg7Cgkkb3V0cFsndGVtcCddID0gJHVybGhhbmRsZXJ0ZW1wOwoJJG91dHBbJ3RyYWlsJ10gPSAkdXJsaGFuZGxlcnRyYWlsOwoJZWNobyBqc29uX2VuY29kZSgkb3V0cCk7
 
 	/// Controller Permalink Halaman
 	if ( isset( $icms_pages[ $urlhandlerfix ] ) ){
