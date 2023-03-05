@@ -52,13 +52,21 @@
 		if (file_exists( app_theme_dir() . '/' . $icms_pages[ $urlhandler ] )){
 			include app_theme_dir() . '/' . $icms_pages[ $urlhandler ]; /// Constant Page
 		}else{
-			app_theme_404();
+			if (file_exists( app_theme_dir() . '/404.php')){ /// Not Found
+				include app_theme_dir() . '/404.php'; 
+			}else{
+				echo "404 - create '404.php' file in your theme to make your own error page or create 'urlhandler.php' in 'core' folder inside your theme folder to make your own url handler";
+			}
 		}
 	}else{
 		if (file_exists( app_theme_dir() . '/core/urlhandler.php')){
 			include app_theme_dir() . '/core/urlhandler.php'; /// Theme Custom URL Handler
 		}else{
-			app_theme_404();
+			if (file_exists( app_theme_dir() . '/404.php')){ /// Not Found
+				include app_theme_dir() . '/404.php'; 
+			}else{
+				echo "404 - create '404.php' file in your theme to make your own error page or create 'urlhandler.php' in 'core' folder inside your theme folder to make your own url handler";
+			}
 		}
 	}
 
