@@ -16,13 +16,11 @@
 		include app_theme_dir() . '/core/db.php';
 		/// Connect to Main db used in ICMS
 		if ( ! defined( 'ICMS_DB_NAME' ) ){
-			$icms_db_conn = app_db_connect();
+			$icms_db_conn = app_db_connect(); /// Use this connection if you want to query something
 		}
 	}else{
-		define('ICMS_DB_NAME', ''); /// Masukan nama database as default
-	    define('ICMS_DB_USER', ''); /// User database as default
-	    define('ICMS_DB_USER_PASS', ''); /// User password akun database as default
-	    define('ICMS_DB_HOST', ''); /// Server db as default
+		/// Don't touch this constant, if you want to connect db, you can do in theme core "db.php" file
+		define('ICMS_DB_NAME', '');define('ICMS_DB_USER', '');define('ICMS_DB_USER_PASS', '');define('ICMS_DB_HOST', '');
 	}
 
 	/// Load Theme Function

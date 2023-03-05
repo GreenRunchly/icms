@@ -28,7 +28,9 @@
 		ltrim( rtrim( parse_url( stripslashes( trim( htmlspecialchars( $_SERVER['REQUEST_URI'] ) ) ))['path'], '/' ), '/' )
 	), '/' );
 
-	/// Remah Remah URL
+	/// Remah Remah URL (Breadcrumb, usefull for generate unique request without query parameter ex. "ieu.link/remahremahunik"
+	/// Use $urlhandler for the page url
+	/// Use $urlhandlertrail for trail next the page path such as http://wa.me/phone/ea, if you have page phone, then will return "ea"
 	$urlhandlerbreak = explode('/', $urlhandler); $urlhandlerbreakfix = ''; $urlhandlertrail = ''; 
 	$urlhandler_trim = $urlhandler;
 	foreach ($urlhandlerbreak as $key => $value) {
@@ -43,11 +45,7 @@
 			}
 		}	
 	}
-
 	$urlhandler = $urlhandler_trim;
-
-	/// Use $urlhandler for the page url
-	/// Use $urlhandlertrail for trail next the page path such as http://wa.me/phone/ea, if you have page phone, then will return "ea"
 	
 	/// Controller Permalink Halaman
 	if ( isset( $icms_pages[ $urlhandler ] ) ){

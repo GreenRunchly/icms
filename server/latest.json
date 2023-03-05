@@ -5,7 +5,6 @@
 	[
 		"icms-main/app-theme/index.php",
 		"icms-main/app-theme/README.md",
-		"icms-main/.htaccess",
 		"icms-main/icms-function.php",
 		"icms-main/icms-load.php",
 		"icms-main/icms-themehandler.php",
