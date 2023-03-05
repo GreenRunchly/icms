@@ -111,11 +111,13 @@ function app_db_select( $table_where, $key_where=[], $isi_where=[]){
 		$query = "SELECT * FROM " . $table_where_txt . $key_where_txt;
 
 		$hasil = app_db_query( $icms_db_conn['conn'], $query);
-		if ($hasil->num_rows > 0) {
+		if ((!empty($hasil->num_rows)) && ($hasil->num_rows > 0)) {
 		    while($row = $hasil->fetch_assoc()) {
 		        $output['result'][] = $row;
 		    }
 		    $output['success'] = 1;
+		}else{
+			$output['result'] = [];
 		}
 	
 	}
