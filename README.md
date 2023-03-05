@@ -8,13 +8,13 @@ Download [release  icms](https://github.com/GreenRunchly/icms/releases/download/
 
 Ingat! updater akan menimpah file berikut
 
-- app-theme/main-app/core/db.php
-- app-theme/main-app/core/function.php
-- app-theme/main-app/core/module.php
-- app-theme/main-app/core/pages.php
-- app-theme/main-app/core/urlhandler.php
-- app-theme/main-app/404.php
-- app-theme/main-app/index.php
+- app-theme/example/core/db.php
+- app-theme/example/core/function.php
+- app-theme/example/core/module.php
+- app-theme/example/core/pages.php
+- app-theme/example/core/urlhandler.php
+- app-theme/example/404.php
+- app-theme/example/index.php
 - app-theme/index.php
 - app-theme/README.md
 - icms-function.php
