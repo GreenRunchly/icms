@@ -1,14 +1,21 @@
 [
 	[
-		"1.4"
+		"1.5"
 	],
 	[
-		"icms-main/app-theme/index.php",
-		"icms-main/app-theme/README.md",
-		"icms-main/icms-function.php",
-		"icms-main/icms-load.php",
-		"icms-main/icms-themehandler.php",
-		"icms-main/index.php",
-		"icms-main/icms-update.php"
+		"icms-main/app-theme/example/core/db.php",
+	    "icms-main/app-theme/example/core/function.php",
+	    "icms-main/app-theme/example/core/module.php",
+	    "icms-main/app-theme/example/core/pages.php",
+	    "icms-main/app-theme/example/core/urlhandler.php",
+	    "icms-main/app-theme/example/404.php",
+	    "icms-main/app-theme/example/index.php",
+	    "icms-main/app-theme/index.php",
+	    "icms-main/app-theme/README.md",
+	    "icms-main/icms-function.php",
+	    "icms-main/icms-load.php",
+	    "icms-main/icms-themehandler.php",
+	    "icms-main/index.php",
+	    "icms-main/icms-update.php"
 	]
 ]
