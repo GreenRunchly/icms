@@ -25,28 +25,29 @@
 	
 	/// Get URL
 	$urlhandler = ltrim( str_ireplace(str_ireplace($_SERVER['DOCUMENT_ROOT'], '', APP_PATH ), '', 
-		ltrim( rtrim( parse_url( stripslashes( trim( htmlspecialchars( $_SERVER['REQUEST_URI'] ) ) ))['path'], '/' ), '/' )
-	), '/' );
+		rtrim( parse_url( stripslashes( trim( htmlspecialchars( $_SERVER['REQUEST_URI'] ) ) ))['path'], '/' )
+	), '/');
 
 	/// Remah Remah URL (Breadcrumb, usefull for generate unique request without query parameter ex. "ieu.link/remahremahunik"
 	/// Use $urlhandler for the page url
 	/// Use $urlhandlertrail for trail next the page path such as http://wa.me/phone/ea, if you have page phone, then will return "ea"
-	$urlhandlerbreak = explode('/', $urlhandler); $urlhandlerbreakfix = ''; $urlhandlertrail = ''; 
-	$urlhandler_trim = $urlhandler;
-	foreach ($urlhandlerbreak as $key => $value) {
-		
-		$urlhandlerbreakfix = $urlhandlerbreakfix . $value . '/';
-		$urlhandlerbreakfix_trim = rtrim( ltrim($urlhandlerbreakfix, '/'), '/' );
+	$urlhandlerbreak = explode('/', $urlhandler); 
+	$urlhandlertemp = ''; $urlhandlerfix = '';
+	$urlhandlertrail = '';
 
-		foreach ($icms_pages as $key => $value) {
-			if ($key == $urlhandlerbreakfix_trim) {
-				$urlhandlertrail = ltrim( str_ireplace($urlhandlerbreakfix_trim, '', $urlhandler), '/');
-				$urlhandler_trim = $urlhandlerbreakfix_trim;
-			}
-		}	
+	for ($i=1; $i < sizeof($urlhandlerbreak); $i++) { 
+		if ($i != sizeof($urlhandlerbreak) ){
+			$urlhandlertemp = $urlhandlertemp . '/';
+		}
+		$urlhandlertemp = $urlhandlertemp . $urlhandlerbreak[$i];
+
+		foreach ($icms_pages as $slug_page => $file) {
+			$urlhandlerfix = str_ireplace($urlhandlertemp, '', $slug_page);
+		}
 	}
-	$urlhandler = $urlhandler_trim;
-	
+	$urlhandlertrail = ltrim( str_ireplace($urlhandlerfix, '', $urlhandler), '/');
+	$urlhandler = $urlhandlerfix;
+
 	/// Controller Permalink Halaman
 	if ( isset( $icms_pages[ $urlhandler ] ) ){
 		if (file_exists( app_theme_dir() . '/' . $icms_pages[ $urlhandler ] )){
