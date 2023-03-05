@@ -55,14 +55,6 @@
 		$urlhandlertrail = $urlhandlertrail . $urlhandlerbreak[$i];
 	}
 
-	// $outp = [];
-	// $outp['handler'] = $urlhandler;
-	// $outp['at'] = $urlat;
-	// $outp['fix'] = $urlhandlerfix;
-	// $outp['temp'] = $urlhandlertemp;
-	// $outp['trail'] = $urlhandlertrail;
-	// echo json_encode($outp);
-
 	/// Controller Permalink Halaman
 	if ( isset( $icms_pages[ $urlhandlerfix ] ) ){
 		if (file_exists( app_theme_dir() . '/' . $icms_pages[ $urlhandlerfix ] )){
