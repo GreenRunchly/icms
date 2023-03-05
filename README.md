@@ -28,7 +28,7 @@ jadi harap tidak melakukan perubahan pada file tersebut.
 
 
 ## Pemakaian
-Agar aplikasimu dapat diimplementasikan, pertama-tama buat duplikasi folder "main-app" didalam folder "app-theme" dan mengubahnya menjadi sesuai keinginan.
+Agar aplikasimu dapat diimplementasikan, pertama-tama buat duplikasi folder "example" didalam folder "app-theme" dan mengubahnya menjadi sesuai keinginan.
 
 Kemudian taruh aplikasi mu didalam folder yang baru saja di duplikasi.
 
